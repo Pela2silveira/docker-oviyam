@@ -1,0 +1,14 @@
+version: "2"
+services:
+  oviyam:
+    image: andesnqn/oviyam:2.7.1
+    restart: always
+    ports:
+      - "8000:8080"
+      - "11115:11115"
+    container_name: oviyam
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./conf:/tmp/conf/
+      - ./conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml 
